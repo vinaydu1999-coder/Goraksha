@@ -1,0 +1,163 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    --background: 220 14% 96%;
+    --foreground: 222 84% 5%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 84% 5%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 84% 5%;
+
+    --primary: 16 70% 52%;
+    --primary-foreground: 0 0% 100%;
+    --primary-dim: 16 67% 36%;
+
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 222 47% 11%;
+
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 9% 46%;
+
+    --accent: 16 70% 52%;
+    --accent-foreground: 0 0% 100%;
+    --accent-bg: 16 80% 95%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 16 70% 52%;
+
+    --radius: 0.375rem;
+
+    --navy: 222 47% 11%;
+    --navy-foreground: 0 0% 98%;
+
+    --unit-prant: 16 70% 52%;
+    --unit-mahanagar: 248 40% 50%;
+    --unit-nagar: 100 72% 24%;
+    --unit-parisar: 211 78% 37%;
+
+    --tag-online-bg: 152 76% 91%;
+    --tag-online-fg: 164 86% 16%;
+    --tag-offline-bg: 42 33% 93%;
+    --tag-offline-fg: 45 5% 26%;
+    --tag-seminar-bg: 263 77% 95%;
+    --tag-seminar-fg: 248 40% 37%;
+    --tag-rally-bg: 45 96% 89%;
+    --tag-rally-fg: 33 82% 22%;
+    --tag-camp-bg: 0 93% 94%;
+    --tag-camp-fg: 0 54% 30%;
+    --tag-upcoming-bg: 45 96% 89%;
+    --tag-upcoming-fg: 33 82% 22%;
+    --tag-completed-bg: 152 76% 91%;
+    --tag-completed-fg: 164 86% 16%;
+    --tag-pending-bg: 45 96% 89%;
+    --tag-pending-fg: 33 82% 22%;
+    --tag-approved-bg: 152 76% 91%;
+    --tag-approved-fg: 164 86% 16%;
+    --tag-rejected-bg: 0 93% 94%;
+    --tag-rejected-fg: 0 54% 30%;
+
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 240 5% 26%;
+    --sidebar-primary: 16 70% 52%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 16 80% 95%;
+    --sidebar-accent-foreground: 16 67% 36%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 16 70% 52%;
+
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  .dark {
+    --background: 222 47% 5%;
+    --foreground: 210 40% 96%;
+    --card: 217 33% 12%;
+    --card-foreground: 210 40% 96%;
+    --popover: 217 33% 12%;
+    --popover-foreground: 210 40% 96%;
+    --primary: 16 70% 52%;
+    --primary-foreground: 0 0% 100%;
+    --primary-dim: 16 67% 36%;
+    --secondary: 217 33% 17%;
+    --secondary-foreground: 210 40% 96%;
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 16 70% 52%;
+    --accent-foreground: 0 0% 100%;
+    --accent-bg: 16 30% 15%;
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 96%;
+    --border: 217 33% 17%;
+    --input: 217 33% 17%;
+    --ring: 16 70% 52%;
+    --navy: 222 47% 5%;
+    --navy-foreground: 0 0% 98%;
+    --sidebar-background: 217 33% 8%;
+    --sidebar-foreground: 215 20% 65%;
+    --sidebar-primary: 16 70% 52%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 16 30% 15%;
+    --sidebar-accent-foreground: 16 70% 52%;
+    --sidebar-border: 217 33% 17%;
+    --sidebar-ring: 16 70% 52%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+}
+
+@layer components {
+  .tag {
+    @apply inline-flex items-center px-1.5 py-0.5 rounded text-[9px] font-medium tracking-wide whitespace-nowrap;
+  }
+  .tag-online { background: hsl(var(--tag-online-bg)); color: hsl(var(--tag-online-fg)); }
+  .tag-offline { background: hsl(var(--tag-offline-bg)); color: hsl(var(--tag-offline-fg)); }
+  .tag-seminar { background: hsl(var(--tag-seminar-bg)); color: hsl(var(--tag-seminar-fg)); }
+  .tag-rally { background: hsl(var(--tag-rally-bg)); color: hsl(var(--tag-rally-fg)); }
+  .tag-camp { background: hsl(var(--tag-camp-bg)); color: hsl(var(--tag-camp-fg)); }
+  .tag-upcoming { background: hsl(var(--tag-upcoming-bg)); color: hsl(var(--tag-upcoming-fg)); }
+  .tag-completed { background: hsl(var(--tag-completed-bg)); color: hsl(var(--tag-completed-fg)); }
+  .tag-pending { background: hsl(var(--tag-pending-bg)); color: hsl(var(--tag-pending-fg)); }
+  .tag-approved { background: hsl(var(--tag-approved-bg)); color: hsl(var(--tag-approved-fg)); }
+  .tag-rejected { background: hsl(var(--tag-rejected-bg)); color: hsl(var(--tag-rejected-fg)); }
+
+  .modal-input {
+    @apply px-2 py-1.5 border border-border rounded-md text-xs bg-card text-card-foreground w-full;
+  }
+  .modal-input:focus {
+    @apply outline-none border-primary;
+  }
+  textarea.modal-input {
+    @apply min-h-[64px] resize-y;
+  }
+}
+
+/* Scrollbar */
+.custom-scrollbar::-webkit-scrollbar { width: 3px; }
+.custom-scrollbar::-webkit-scrollbar-thumb { background: hsl(var(--border)); border-radius: 99px; }
+
+/* Modal animation */
+@keyframes slideUp {
+  from { transform: translateY(40px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+.animate-slide-up {
+  animation: slideUp 0.22s cubic-bezier(0.32, 0.72, 0, 1);
+}

@@ -1,0 +1,11 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Allow read to all authenticated-looking requests (app uses custom auth, not Firebase Auth)
+    // For production, tighten these rules
+    match /{document=**} {
+      allow read: if true;
+      allow write: if true;
+    }
+  }
+}
